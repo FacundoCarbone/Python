@@ -1,4 +1,4 @@
-def mostrar_inventario(invntario):
+def mostrar_inventario(inventario):
     if not inventario:
         print('El inventario esta vacio')
     else:
