@@ -22,8 +22,11 @@ answers = [
 # Índice de la respuesta correcta para cada pregunta, en el mismo orden que las preguntas
 correct_answers_index = [1, 2, 0, 3, 1]
 
-# Elegir 3 preguntas aleatorias
-questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
+# Unir las preguntas, respuestas y respuestas correctas en un solo iterable
+question_data = list(zip(questions, answers, correct_answers_index))
+
+# Elegir 3 preguntas aleatorias sin repetición
+questions_to_ask = random.sample(question_data, k=3)
 
 puntaje = 0.0
 
@@ -61,5 +64,5 @@ for question, possible_answers, correct_index in questions_to_ask:
     # Se imprime un blanco al final de la pregunta
     print()
 
-# Se imprime el puntaje final
-print(f'{puntaje} es su puntuación final')
+# Se imprime el puntaje final de manera más clara
+print(f"¡Juego terminado! Su puntuación final es: {puntaje}")
